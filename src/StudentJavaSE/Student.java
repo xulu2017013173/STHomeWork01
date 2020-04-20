@@ -1,23 +1,22 @@
 package StudentJavaSE;
 public class Student {
-    // 学号
-    private String id;
-    // 姓名
-    private String name;
-    // 分数
-    private String score;
+    private int id;//学号
+    private String name;//姓名
+    private String birDate;//出生日期
+    private boolean gender;//性别
     public Student() {
     }
-    public Student(String id, String name, String score)
+    public Student(int id, String name, String birDate,boolean gender)
     {
         this.id = id;
         this.name = name;
-        this.score = score;
+        this.birDate = birDate;
+        this.gender = gender;
     }
-    public String getId() {
+    public int getId() {
         return id;
     }
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
     public String getName() {
@@ -26,10 +25,16 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
-    public String getScore() {
-        return score;
+    public String getBirDate() {
+        return birDate;
     }
-    public void setScore(String score) {
-        this.score = score;
+    public void setBirDate(String birDate) {
+        this.birDate = birDate;
+    }
+    public boolean getGender() {
+    	return gender;
+    }
+    public void setGender(boolean gender) {
+    	this.gender = gender;
     }
 }
