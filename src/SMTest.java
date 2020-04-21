@@ -1,4 +1,4 @@
-package StudentJavaSE;
+
 
 public class SMTest {
 

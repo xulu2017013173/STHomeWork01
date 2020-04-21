@@ -1,4 +1,4 @@
-package StudentJavaSE;
+
 public class Student {
     private int id;//Ñ§ºÅ
     private String name;//ĞÕÃû
