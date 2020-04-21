@@ -7,7 +7,7 @@ public class StudentManager {
     public static void App() {
         ArrayList<Student> list = new ArrayList<Student>();
         while (true) {
-            System.out.println("**请选择操作：*************");
+            System.out.println("**请选择操作*************");
             System.out.println("*       1 插入                   *");
             System.out.println("*       2 查找                   *");
             System.out.println("*       3 删除                   *");
@@ -44,7 +44,7 @@ public class StudentManager {
                      break;
 
                 default:
-                    System.out.println("按键错误，请重新输入");
+                    System.out.println("请重新输入！");
                     break;
             }
         }
@@ -118,7 +118,7 @@ public class StudentManager {
             }
         }
         if (index == -1) {
-            System.out.println("不好意思,你要删除学生信息不存在,请重选");
+            System.out.println("你要删除的学生信息不存在,请重选");
         } else {
             list.remove(index);
             System.out.println("删除学生成功");

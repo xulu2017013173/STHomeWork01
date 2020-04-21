@@ -1,6 +1,6 @@
 package StudentJavaSE;
 
-public class Test {
+public class SMTest {
 
 	public static void main(String[] args) {
 		StudentManager.App();
