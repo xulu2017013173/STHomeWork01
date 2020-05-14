@@ -7,52 +7,53 @@ public class StudentManager {
     public static void App() {
         ArrayList<Student> list = new ArrayList<Student>();
         while (true) {
-            System.out.println("**ÇëÑ¡Ôñ²Ù×÷*************");
-            System.out.println("*       1 ²åÈë                   *");
-            System.out.println("*       2 ²éÕÒ                   *");
-            System.out.println("*       3 É¾³ı                   *");
-            System.out.println("*       4 ĞŞ¸Ä                   *");
-            System.out.println("*       5 Êä³ö                   *");
-            System.out.println("*       6 ÍË³ö                   *");
+            System.out.println("**è¯·é€‰æ‹©æ“ä½œ*************");
+            System.out.println("*       1 æ’å…¥                   *");
+            System.out.println("*       2 æŸ¥æ‰¾                   *");
+            System.out.println("*       3 åˆ é™¤                   *");
+            System.out.println("*       4 ä¿®æ”¹                   *");
+            System.out.println("*       5 è¾“å‡º                   *");
+            System.out.println("*       6 é€€å‡º                   *");
             System.out.println("************************");
             Scanner sc = new Scanner(System.in);
             String choiceString = sc.nextLine();
             switch (choiceString) {
                 case "1":
-                    // ²åÈë
+                    // æ’å…¥
                     addStudent(list);
                     break;
                 case "2":
-                	//²éÕÒ
-                	searchStudent(list);
-                	break;
+                    //æŸ¥æ‰¾
+                    searchStudent(list);
+                    break;
                 case "3":
-                    // É¾³ı
+                    // åˆ é™¤
                     deleteStudent(list);
                     break;
                 case "4":
-                    // ĞŞ¸Ä
+                    // ä¿®æ”¹
                     updateStudent(list);
                     break;
                 case "5":
-                    // Êä³ö
+                    // è¾“å‡º
                     orderByScore(list);
                     break;
                 case "6":
-                     //ÍË³ö
-                     System.out.println("ÍË³ö³É¹¦£¡");
+                     //é€€å‡º
+                     System.out.println("é€€å‡ºæˆåŠŸï¼");
                      break;
-
                 default:
-                    System.out.println("ÇëÖØĞÂÊäÈë£¡");
+                    System.out.println("è¯·é‡æ–°è¾“å…¥ï¼");
                     break;
             }
         }
     }
 
+	/*æ–¹æ³•å‰å¢åŠ æ³¨é‡Šï¼ˆæ£€æŸ¥é¡¹ï¼šâ…¡.(5)ï¼‰*/
+	//ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯
     public static void updateStudent(ArrayList<Student> list) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("ÇëÊäÈëÄãÒªĞŞ¸ÄµÄĞÕÃû£º");
+        System.out.println("è¯·è¾“å…¥ä½ è¦ä¿®æ”¹çš„å§“åï¼š");
         String name = sc.nextLine();
         int index = -1;
         for (int x = 0; x < list.size(); x++) {
@@ -63,33 +64,35 @@ public class StudentManager {
             }
         }
         if (index == -1) {
-            System.out.println("ÄãÒªĞŞ¸ÄÑ§ÉúĞÅÏ¢²»´æÔÚ,ÇëÖØÑ¡");
+            System.out.println("ä½ è¦ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯ä¸å­˜åœ¨,è¯·é‡é€‰");
         }
         else {
-            System.out.println("ÇëÊäÈëĞŞ¸ÄµÄÑ§ºÅ£º");
+            System.out.println("è¯·è¾“å…¥ä¿®æ”¹çš„å­¦å·ï¼š");
             int id = Integer.parseInt(sc.nextLine());
-            System.out.println("ÇëÊäÈëĞŞ¸ÄµÄ³öÉúÈÕÆÚ£º");
+            System.out.println("è¯·è¾“å…¥ä¿®æ”¹çš„å‡ºç”Ÿæ—¥æœŸï¼š");
             String birDate = sc.nextLine();
-            System.out.println("ÇëÊäÈëĞŞ¸ÄµÄĞÔ±ğ£º");
+            System.out.println("è¯·è¾“å…¥ä¿®æ”¹çš„æ€§åˆ«ï¼š");
             String input_gender = sc.nextLine();
             boolean gender = false;
             if(input_gender.equals("true"))
-            	gender = true;
+                gender = true;
             if(input_gender.equals("false"))
-            	gender = false;
+                gender = false;
             Student s = new Student();
             s.setName(name);
             s.setId(id);
             s.setBirDate(birDate);
             s.setGender(gender);
             list.set(index, s);
-            System.out.println("ĞŞ¸Ä³É¹¦");
+            System.out.println("ä¿®æ”¹æˆåŠŸ");
         }
     }
 
+	/*æ–¹æ³•å‰å¢åŠ æ³¨é‡Šï¼ˆæ£€æŸ¥é¡¹ï¼šâ…¡.(5)ï¼‰*/
+	//æŸ¥æ‰¾å­¦ç”Ÿï¼ˆæŒ‰å§“åæŸ¥æ‰¾ï¼‰
     public static void searchStudent(ArrayList<Student> list) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("ÇëÊäÈëÄãÒª²éÕÒµÄÑ§ÉúµÄĞÕÃû£º");
+        System.out.println("è¯·è¾“å…¥ä½ è¦æŸ¥æ‰¾çš„å­¦ç”Ÿçš„å§“åï¼š");
         String name = sc.nextLine();
         int index = -1;
         for (int x = 0; x < list.size(); x++) {
@@ -101,13 +104,15 @@ public class StudentManager {
             }
         }
         if (index == -1) {
-            System.out.println("ÄãÒª²éÕÒÑ§ÉúĞÅÏ¢²»´æÔÚ,ÇëÖØÑ¡");
+            System.out.println("ä½ è¦æŸ¥æ‰¾å­¦ç”Ÿä¿¡æ¯ä¸å­˜åœ¨,è¯·é‡é€‰");
         }
     }
     
+	/*æ–¹æ³•å‰å¢åŠ æ³¨é‡Šï¼ˆæ£€æŸ¥é¡¹ï¼šâ…¡.(5)ï¼‰*/
+	//åˆ é™¤å­¦ç”Ÿä¿¡æ¯ï¼ˆæŒ‰å§“ååˆ é™¤ï¼‰
     public static void deleteStudent(ArrayList<Student> list) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("ÇëÊäÈëÄãÒªÉ¾³ıµÄÑ§ÉúµÄĞÕÃû£º");
+        System.out.println("è¯·è¾“å…¥ä½ è¦åˆ é™¤çš„å­¦ç”Ÿçš„å§“åï¼š");
         String name = sc.nextLine();
         int index = -1;
         for (int x = 0; x < list.size(); x++) {
@@ -118,18 +123,20 @@ public class StudentManager {
             }
         }
         if (index == -1) {
-            System.out.println("ÄãÒªÉ¾³ıµÄÑ§ÉúĞÅÏ¢²»´æÔÚ,ÇëÖØÑ¡");
+            System.out.println("ä½ è¦åˆ é™¤çš„å­¦ç”Ÿä¿¡æ¯ä¸å­˜åœ¨,è¯·é‡é€‰");
         } else {
             list.remove(index);
-            System.out.println("É¾³ıÑ§Éú³É¹¦");
+            System.out.println("åˆ é™¤å­¦ç”ŸæˆåŠŸ");
         }
     }
 
+	/*æ–¹æ³•å‰å¢åŠ æ³¨é‡Šï¼ˆæ£€æŸ¥é¡¹ï¼šâ…¡.(5)ï¼‰*/
+	//æ’å…¥å­¦ç”Ÿä¿¡æ¯ï¼ˆæ¯æ¬¡æ–°å¢ä¸€ä¸ªï¼‰
     public static void addStudent(ArrayList<Student> list) {
         Scanner sc = new Scanner(System.in);
         String name;
         while (true) {
-            System.out.println("ÇëÊäÈëÑ§ÉúĞÕÃû£º");
+            System.out.println("è¯·è¾“å…¥å­¦ç”Ÿå§“åï¼š");
             name = sc.nextLine();
 
             boolean flag = false;
@@ -141,42 +148,42 @@ public class StudentManager {
                 }
             }
             if (flag) {
-                System.out.println("ÄãÊäÈëµÄĞÕÃûÒÑ¾­±»Õ¼ÓÃ,ÇëÖØĞÂÊäÈë");
+                System.out.println("ä½ è¾“å…¥çš„å§“åå·²ç»è¢«å ç”¨,è¯·é‡æ–°è¾“å…¥");
             }
             else {
                 break;
             }
         }
-        System.out.println("ÇëÊäÈëÑ§ÉúÑ§ºÅ£º");
+        System.out.println("è¯·è¾“å…¥å­¦ç”Ÿå­¦å·ï¼š");
         int id = Integer.parseInt(sc.nextLine());
-        System.out.println("ÇëÊäÈëÑ§Éú³öÉúÈÕÆÚ£º");
+        System.out.println("è¯·è¾“å…¥å­¦ç”Ÿå‡ºç”Ÿæ—¥æœŸï¼š");
         String birDate = sc.nextLine();
-        System.out.println("ÇëÊäÈëÑ§ÉúĞÔ±ğ£º");
+        System.out.println("è¯·è¾“å…¥å­¦ç”Ÿæ€§åˆ«ï¼š");
         String input_gender = sc.nextLine();
         boolean gender = false;
         if(input_gender.equals("true"))
-        	gender = true;
+            gender = true;
         if(input_gender.equals("false"))
-        	gender = false;
+            gender = false;
         Student s = new Student();
         s.setName(name);
         s.setId(id);
         s.setBirDate(birDate);
         s.setGender(gender);
         list.add(s);
-        System.out.println("Ìí¼ÓÑ§Éú³É¹¦");
+        System.out.println("æ·»åŠ å­¦ç”ŸæˆåŠŸ");
     }
 
+	/*æ–¹æ³•å‰å¢åŠ æ³¨é‡Šï¼ˆæ£€æŸ¥é¡¹ï¼šâ…¡.(5)ï¼‰*/
+	//æŒ‰ç…§å­¦å·æ’åº
     private static void orderByScore(ArrayList<Student> list ) {
         if (list.size() <= 0) {
-            System.out.println("ÎŞĞÅÏ¢´æÔÚ");
+            System.out.println("æ— ä¿¡æ¯å­˜åœ¨");
             return;
         }
-
         ArrayList<Student> cList = (ArrayList<Student>) list.clone();
 
         Collections.sort(cList, new Comparator<Student>() {
-
             public int compare(Student s1, Student s2) {
                 Double id1 = new Double(s1.getId());
                 Double id2 = new Double(s2.getId());
@@ -185,9 +192,10 @@ public class StudentManager {
             }
         });
 
-        System.out.println("Ñ§ºÅ\t\tĞÕÃû\t\t³öÉúÈÕÆÚ\t\tĞÔ±ğ");
+        System.out.println("å­¦å·\t\tå§“å\t\tå‡ºç”Ÿæ—¥æœŸ\t\tæ€§åˆ«");
         for (int i = 0; i < cList.size(); i++) {
             Student s = cList.get(i);
             System.out.println(s.getId() + "\t"+ "\t"+s.getName() + "\t" +"\t"+ s.getBirDate() + "\t" +"\t"+ s.getGender() );
         }
-    }}
+}
+}
