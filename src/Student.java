@@ -1,23 +1,24 @@
 
 public class Student {
-    private int id;//学号
-    private String name;//姓名
-    private String birDate;//出生日期
-    private boolean gender;//性别
-    public Student() {
-    }
-    public Student(int id, String name, String birDate,boolean gender)
+    private int ID; //瀛﹀彿
+    private String name; //濮撳悕
+    private String birDate; //鍑虹敓鏃ユ湡
+    private boolean gender; //鎬у埆
+/*public Student() {
+}*/
+public Student() {} //浠ｇ爜淇敼妫�鏌ラ」锛氣參.(16)澶氫綑鎶樿
+    public Student(int ID, String name, String birDate, boolean gender)
     {
-        this.id = id;
+        this.ID = ID;
         this.name = name;
         this.birDate = birDate;
         this.gender = gender;
     }
     public int getId() {
-        return id;
+        return ID;
     }
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int ID) {
+        this.ID = ID;
     }
     public String getName() {
         return name;
@@ -32,9 +33,9 @@ public class Student {
         this.birDate = birDate;
     }
     public boolean getGender() {
-    	return gender;
+        return gender;
     }
     public void setGender(boolean gender) {
-    	this.gender = gender;
+        this.gender = gender;
     }
 }
